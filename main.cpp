@@ -4,6 +4,8 @@
 using namespace std;
 int main(){
 	Tablero* tablerin = new Tablero();
-	tablerin->
+	do{
+		tablerin->
+	}
 	return 0;
 }

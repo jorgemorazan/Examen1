@@ -7,7 +7,11 @@ class Metodos{
 	private:
 		char** table;
 	public:
-		void CrearTablero();
+		Tablero();
 		void imprimirTablero();
-
+		void movimientoTablero(int, int, int);
+		bool Verificacion(int, int, int, int, int);
+		bool Lleno();
+		int GanadorDeDiferencia();
+		int GanadorPorTotal();
 };
