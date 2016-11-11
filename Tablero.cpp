@@ -59,7 +59,7 @@ void Tablero::movimientoTablero(int k, int l, int jugador){
 void Tablero::Verificacion(int i, int j, int k, int l, int jugador){
 	char pieza='', comer='';
 	int mayor1=0, menor1=0, menor2=0, mayor2=0;
-	bool valid = false;
+	bool valid1 = false, valid2 = false, valid3 = false;
 	if(jugador == 1){
 		pieza = '+'
 		comer = '#'
@@ -67,16 +67,45 @@ void Tablero::Verificacion(int i, int j, int k, int l, int jugador){
 		pieza = '#';
 		comer = '+'
 	}
-	if(i>k){
-		mayor1 = i;
-		menor1 = k;
-	} else if(k<i){
-		mayor1 = k;
-		menor1 = i;
-	} else {
-
-	}
-		if(table[k][l] != comer){
-			table[k][l];
+	if(l>=0 && k<11 && l<11 && k>=11){//Verifica si no sobrepasan la matriz
+		if(i>k){//Verifica el mayor de i
+			mayor1 = i;
+			menor1 = k;
+			valid1 = true;
+		} else if(k<i){
+			mayor1 = k;
+			menor1 = i;
+			valid1 = true;
+		} else {
+			valid1 = false;
 		}
+		if(j>l){//Verifica el mayor de j
+			mayor2 = j;
+			menor2 = l;
+			valid1 = true;
+		} else if(l>j) {
+			mayor2 = l;
+			menor2 = j;
+			valid1 = true;
+		} else {
+			valid1 = false;
+		}
+		if(valid1){//Si no es igual
+			if(mayor1-menor1<=2 && mayor2-menor2<=2){
+				valid2 = true;
+			}else{
+				valid2 = false;
+			}
+			if(valid2){
+				if(table[k][l] != pieza && table[k][l] != comer){
+					valid3=true;
+				} else {
+					valid3=false;
+				}
+			}
+		}
+	} else {
+		valid3 = false;
+	}
+	return valid3;
 }
