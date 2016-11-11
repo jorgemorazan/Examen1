@@ -51,13 +51,15 @@ void Tablero::movimientoTablero(int k, int l, int jugador){
 				table[i][j] = pieza;
 				if(table[k+1][l] == comer && k+1<11|| table[k-1][l] == comer && k-1>=0|| table[k][l-1] == comer && l-1>=0 || table[k][l+1] == comer && l+1<11|| table[k-1][l-1] == comer && k-1>=0|| table[k+1][l-1] == comer && k+1<11 && l-1>=0|| table[k+1][l+1] == comer && k+1<11){
 					table[i][j] = pieza;
-				}
+				}//
 			}
 		}
 	}
 }//fin mover
 void Tablero::Verificacion(int i, int j, int k, int l, int jugador){
 	char pieza='', comer='';
+	int mayor1=0, menor1=0, menor2=0, mayor2=0;
+	bool valid = false;
 	if(jugador == 1){
 		pieza = '+'
 		comer = '#'
@@ -65,5 +67,16 @@ void Tablero::Verificacion(int i, int j, int k, int l, int jugador){
 		pieza = '#';
 		comer = '+'
 	}
-	if()
+	if(i>k){
+		mayor1 = i;
+		menor1 = k;
+	} else if(k<i){
+		mayor1 = k;
+		menor1 = i;
+	} else {
+
+	}
+		if(table[k][l] != comer){
+			table[k][l];
+		}
 }
