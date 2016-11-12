@@ -27,7 +27,11 @@ int main(){
 				cin>>l;
 				valid = tablerin->Verificacion(i,j,k,l,jugador);
 			}while(!valid);
-			tablerin->(k, l,jugador);
+			tablerin->movimientoTablero(k, l,jugador);
+			ganador = tablerin->GanadorDeDiferencia();
+			if(ganador!=0){
+				finish=true;
+			}
 		}else{
 			ganador = tablerin->GanadorPorTotal();
 			finish = true;
@@ -35,5 +39,6 @@ int main(){
 		cont++;
 	}while(!finish);
 	tablerin->deleteAll();
+	cout<<"Ganó el jugador "<<ganador;
 	return 0;
 }
