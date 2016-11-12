@@ -26,7 +26,7 @@ void Tablero::imprimirTablero(){
 			cout<<table[i][j]<<" ";
 		}
 		cout<< endl;
-	}l
+	}
 }
 void Tablero::movimientoTablero(int k, int l, int jugador){
 	char pieza='', comer='';
