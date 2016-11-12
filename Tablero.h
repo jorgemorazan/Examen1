@@ -14,5 +14,5 @@ class Metodos{
 		bool Lleno();
 		int GanadorDeDiferencia();
 		int GanadorPorTotal();
-		void deleteAll();m
+		void deleteAll();
 };
