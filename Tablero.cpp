@@ -171,3 +171,11 @@ int Tablero::GanadorPorTotal(){
 	}
 	return ganador;
 }
+void Tablero::deleteAll(){
+	for (int i = 0; i < 11; ++i)
+	{
+		delete[] tablero;
+		table=NULL;
+	}
+	delete[] table
+}
